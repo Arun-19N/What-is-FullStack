@@ -9,8 +9,9 @@ const LAYERS = [
     icon: '🎨',
     color: 'var(--accent-cyan)',
     range: [0, 25],
-    description: 'The polished UI that users see and interact with. HTML structures the content, CSS styles it beautifully, and React makes it dynamic and interactive.',
-    details: ['HTML / JSX Structure', 'CSS Styling & Animations', 'React Components', 'User Events & State'],
+    description: 'This is what users SEE and TOUCH — the buttons, images, text, and animations. It\'s built with HTML (structure), CSS (beauty), and React (interactivity).',
+    details: ['HTML = skeleton of the page', 'CSS = clothes and makeup', 'React = makes it alive and clickable', 'Runs in YOUR browser'],
+    analogy: '🏪 Think of it like the storefront of a restaurant — the menu, the decor, the counter where you place orders.',
     visual: 'storefront',
   },
   {
@@ -19,8 +20,9 @@ const LAYERS = [
     icon: '🔗',
     color: 'var(--accent-purple)',
     range: [25, 50],
-    description: 'RESTful APIs act as glowing pathways connecting the front-end to the back-end. Every button click sends data through these routes.',
-    details: ['REST Endpoints', 'HTTP Methods (GET, POST, PUT, DELETE)', 'JSON Data Format', 'Request / Response Cycle'],
+    description: 'APIs are the MESSENGERS between front-end and back-end. When you click "Like", an API carries that action to the server.',
+    details: ['GET = fetch data ("show me posts")', 'POST = send data ("create new post")', 'PUT = update data ("edit my profile")', 'DELETE = remove data ("delete comment")'],
+    analogy: '📨 Think of it like a waiter in a restaurant — takes your order (request) to the kitchen (server) and brings back food (response).',
     visual: 'pathways',
   },
   {
@@ -29,8 +31,9 @@ const LAYERS = [
     icon: '⚙️',
     color: 'var(--accent-orange)',
     range: [50, 75],
-    description: 'The engine room where Node.js and Express.js process requests, validate data, run business logic, and manage authentication.',
-    details: ['Node.js Runtime', 'Express.js Router', 'Authentication & Authorization', 'Business Logic Processing'],
+    description: 'The invisible engine room! Node.js + Express receives requests, checks if you\'re allowed (authentication), validates your data, and decides what to do.',
+    details: ['Node.js = JavaScript on the server', 'Express = handles routes & logic', 'Auth = "Are you logged in?"', 'Validation = "Is this data valid?"'],
+    analogy: '🏭 Think of it like the kitchen — you can\'t see it, but it\'s where all the real cooking (processing) happens!',
     visual: 'engine',
   },
   {
@@ -39,8 +42,9 @@ const LAYERS = [
     icon: '🗄️',
     color: 'var(--accent-green)',
     range: [75, 100],
-    description: 'MongoDB stores all data as flexible JSON-like documents. Data is queried, updated, and organized in collections — the digital warehouse.',
-    details: ['MongoDB Collections', 'CRUD Operations', 'Document Schema', 'Data Indexing & Queries'],
+    description: 'MongoDB stores ALL your data permanently — user profiles, posts, messages, orders. Unlike variables in code, database data survives even after the server restarts!',
+    details: ['MongoDB = stores data as JSON documents', 'Collections = like folders of similar items', 'CRUD = Create, Read, Update, Delete', 'Queries = "find all users named Ravi"'],
+    analogy: '📂 Think of it like a library\'s filing system — every book (data) has a shelf (collection) and a catalog number (_id).',
     visual: 'warehouse',
   },
 ];
@@ -58,10 +62,10 @@ export default function FullStackXRay() {
         <ScrollReveal>
           <div className="xray-section__header">
             <span className="section-badge">🔍 Section 02</span>
-            <h2 className="section-title">The Anatomy of a Web App</h2>
+            <h2 className="section-title">Peel Back the Layers</h2>
             <p className="section-subtitle">
-              Drag the X-Ray slider to peel back the layers of a modern web application
-              and discover what powers each level.
+              A web app is like a building — you only see the outside, but there are hidden floors underneath. 
+              Drag the slider below to X-Ray through each layer and see what's really going on!
             </p>
           </div>
         </ScrollReveal>
@@ -217,6 +221,9 @@ export default function FullStackXRay() {
                 <span className="xray-info__name">{activeLayer.name}</span>
               </div>
               <p className="xray-info__desc">{activeLayer.description}</p>
+              {activeLayer.analogy && (
+                <div className="xray-info__analogy">{activeLayer.analogy}</div>
+              )}
               <ul className="xray-info__details">
                 {activeLayer.details.map((d, i) => (
                   <li key={i}>

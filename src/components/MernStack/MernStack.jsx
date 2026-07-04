@@ -10,7 +10,7 @@ const MERN_TECHS = [
     icon: '🍃',
     color: '#00ed64',
     colorVar: 'var(--accent-green)',
-    description: 'A NoSQL database that stores data as flexible JSON-like documents. No rigid tables — just adaptable, scalable collections.',
+    description: 'Your app\'s memory. Instead of rigid tables (like Excel), MongoDB stores data as flexible JSON documents. Need to add a new field? Just add it — no restructuring needed!',
     animClass: 'mern-card__anim--mongo',
     features: ['Document-based', 'Scalable', 'Schema-flexible', 'JSON native'],
   },
@@ -21,7 +21,7 @@ const MERN_TECHS = [
     icon: '⚡',
     color: '#f5f5f5',
     colorVar: 'var(--text-primary)',
-    description: 'A minimal, fast web framework for Node.js that handles routing, middleware, and HTTP requests with elegant simplicity.',
+    description: 'The traffic cop of your server. When a request arrives at your server, Express decides: "Where should this go? What should happen?" It organizes everything.',
     animClass: 'mern-card__anim--express',
     features: ['Routing', 'Middleware', 'RESTful APIs', 'Lightweight'],
   },
@@ -32,7 +32,7 @@ const MERN_TECHS = [
     icon: '⚛️',
     color: '#61dafb',
     colorVar: 'var(--accent-cyan)',
-    description: 'A JavaScript library for building dynamic user interfaces from reusable components. The LEGO bricks of modern web UIs.',
+    description: 'The LEGO bricks of web UI. Instead of writing one huge HTML file, you build small reusable pieces (components) that snap together. Change one piece, and only that piece updates!',
     animClass: 'mern-card__anim--react',
     features: ['Components', 'Virtual DOM', 'State Management', 'Reusable'],
   },
@@ -43,7 +43,7 @@ const MERN_TECHS = [
     icon: '💚',
     color: '#68a063',
     colorVar: 'var(--accent-green)',
-    description: 'JavaScript runtime that powers the server. Non-blocking, event-driven architecture makes it fast and efficient at scale.',
+    description: 'JavaScript, but running on the SERVER instead of the browser. This means you can use ONE language (JS) for everything — frontend AND backend. That\'s the MERN superpower!',
     animClass: 'mern-card__anim--node',
     features: ['Server-side JS', 'Event-driven', 'Non-blocking', 'NPM ecosystem'],
   },
@@ -146,10 +146,11 @@ export default function MernStack() {
         <ScrollReveal>
           <div className="mern-section__header">
             <span className="section-badge">🦸 Section 03</span>
-            <h2 className="section-title">The MERN Stack</h2>
+            <h2 className="section-title">Meet Your Toolkit: MERN</h2>
             <p className="section-subtitle">
-              Four technologies. One language. JavaScript powers every layer — 
-              from the database to the browser. Meet the elite squad that builds the modern web.
+              These four technologies are your weapons of choice. The best part? 
+              They ALL use JavaScript — so you learn ONE language and build EVERYTHING. 
+              Hover over each card to see them in action!
             </p>
           </div>
         </ScrollReveal>

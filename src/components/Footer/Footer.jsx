@@ -8,10 +8,11 @@ export default function Footer() {
       <div className="container">
         <ScrollReveal>
           <div className="footer__cta">
-            <h2 className="footer__cta-title">Ready to Build Your City?</h2>
+            <h2 className="footer__cta-title">Now It's YOUR Turn to Build</h2>
             <p className="footer__cta-subtitle">
-              You now understand the full picture — from pixels to databases. 
-              It's time to write your first line of code and bring the Digital Metropolis to life.
+              You've seen how the frontend, backend, and database work together.
+              You've watched your own data flow through the entire stack.
+              Now it's time to write your first line of code and make it real. Let's go! 🚀
             </p>
             <div className="footer__cta-buttons">
               <button className="footer__cta-btn footer__cta-btn--primary" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
@@ -27,7 +28,7 @@ export default function Footer() {
             <span className="footer__brand-text">Digital Metropolis</span>
           </div>
           <p className="footer__copy">
-            Built with 💙 for 2nd Year CS Students — Full-Stack Web Development Journey
+            Build with 💙 for 2nd Year Students — Full-Stack Web Development Journey
           </p>
           <div className="footer__tech-stack">
             <span>React</span>

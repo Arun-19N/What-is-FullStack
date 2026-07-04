@@ -5,12 +5,12 @@ import './WhyWebDev.css';
 
 /* ---- Day-in-the-Life Activity Cards ---- */
 const ACTIVITIES = [
-  { emoji: '☕', title: 'Morning Coffee', desc: 'Order via a React-powered delivery app', color: 'var(--accent-orange)' },
-  { emoji: '🎵', title: 'Stream Music', desc: 'Node.js servers stream millions of songs', color: 'var(--accent-green)' },
-  { emoji: '🏦', title: 'Check Balance', desc: 'Secure APIs handle your banking data', color: 'var(--accent-blue)' },
-  { emoji: '💬', title: 'Message Friends', desc: 'WebSockets enable real-time chat', color: 'var(--accent-purple)' },
-  { emoji: '🛒', title: 'Shop Online', desc: 'Full-stack e-commerce at your fingertips', color: 'var(--accent-pink)' },
-  { emoji: '📺', title: 'Watch Videos', desc: 'Streaming platforms built on web tech', color: 'var(--accent-cyan)' },
+  { emoji: '☕', title: 'Order Breakfast', desc: 'Swiggy/Zomato is a React app talking to Node.js servers', color: 'var(--accent-orange)' },
+  { emoji: '🎵', title: 'Stream Music', desc: 'Spotify uses APIs to fetch your playlists in milliseconds', color: 'var(--accent-green)' },
+  { emoji: '🏦', title: 'UPI Payment', desc: 'Secure REST APIs handle your money behind the scenes', color: 'var(--accent-blue)' },
+  { emoji: '💬', title: 'Chat on WhatsApp', desc: 'WebSockets send messages instantly without page refresh', color: 'var(--accent-purple)' },
+  { emoji: '🛒', title: 'Shop on Amazon', desc: 'Full-stack app: React frontend + Node backend + MongoDB database', color: 'var(--accent-pink)' },
+  { emoji: '📺', title: 'Watch YouTube', desc: 'Billions of video streams powered by web technology daily', color: 'var(--accent-cyan)' },
 ];
 
 /* ---- Code-to-Reality ---- */
@@ -67,10 +67,10 @@ export default function WhyWebDev() {
         <ScrollReveal>
           <div className="why-section__header">
             <span className="section-badge">🌆 Section 01</span>
-            <h2 className="section-title">Why Web Development Matters</h2>
+            <h2 className="section-title">Why Should YOU Learn This?</h2>
             <p className="section-subtitle">
-              Every app you use, every transaction you make, every message you send — 
-              it all runs on web technology. Here's what your day looks like through the lens of code.
+              Open your phone right now — every single app you use is built with web technology. 
+              From ordering food to sending money, it's all code. Here's your daily life, decoded:
             </p>
           </div>
         </ScrollReveal>
@@ -79,7 +79,7 @@ export default function WhyWebDev() {
         <ScrollReveal delay={0.1}>
           <div className="why-day">
             <h3 className="why-day__title">
-              <span className="why-day__icon">🕐</span> A Day in Your Digital Life
+              <span className="why-day__icon">📱</span> Your Phone = Web Apps Everywhere
             </h3>
             <div className="why-day__scroll-wrapper">
               <div className="why-day__track" ref={scrollContainerRef}>
@@ -104,8 +104,9 @@ export default function WhyWebDev() {
         <ScrollReveal delay={0.1}>
           <div className="why-morph">
             <h3 className="why-morph__title">
-              <span className="why-morph__icon">✨</span> Code → Reality
+              <span className="why-morph__icon">✨</span> Code → What You See On Screen
             </h3>
+            <p className="why-morph__desc">On the left is the actual code developers write. On the right is what the user sees. Same thing — two perspectives!</p>
             <div className="why-morph__split">
               {/* Code side */}
               <div className="why-morph__code">

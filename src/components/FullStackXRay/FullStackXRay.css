@@ -435,7 +435,19 @@
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.7;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.xray-info__analogy {
+  padding: 0.7rem 1rem;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.05), rgba(124, 77, 255, 0.05));
+  border-left: 3px solid var(--layer-color);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-style: italic;
+  line-height: 1.6;
 }
 
 .xray-info__details {

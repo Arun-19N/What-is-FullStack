@@ -65,7 +65,7 @@ export default function Hero() {
       <div className="hero__content">
         <div className="hero__badge">
           <span className="hero__badge-dot"></span>
-          2nd Year CS — Full-Stack Journey
+          🎓 2nd Year CS — Your Full-Stack Journey Starts Here
         </div>
 
         <h1 className="hero__title" id="hero-title">
@@ -74,8 +74,9 @@ export default function Hero() {
         </h1>
 
         <p className={`hero__subtitle ${typingDone ? 'hero__subtitle--visible' : ''}`}>
-          Build the future, one layer at a time. Explore how modern web applications 
-          are architected, from the pixels you see to the servers that power them.
+          Ever wondered how Instagram, Zomato, or Netflix actually work behind the scenes? 
+          You're about to find out. Scroll down and watch the magic unfold — layer by layer, 
+          from what you see on screen to the invisible engines powering it all.
         </p>
 
         <div className={`hero__cta-row ${typingDone ? 'hero__cta-row--visible' : ''}`}>
