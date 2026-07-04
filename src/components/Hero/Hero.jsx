@@ -65,7 +65,7 @@ export default function Hero() {
       <div className="hero__content">
         <div className="hero__badge">
           <span className="hero__badge-dot"></span>
-          🎓 2nd Year CS — Your Full-Stack Journey Starts Here
+          🎓 2nd Year  — Your Full-Stack Journey Starts Here
         </div>
 
         <h1 className="hero__title" id="hero-title">
