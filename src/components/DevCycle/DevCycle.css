@@ -1,0 +1,427 @@
+/* ============================================================
+   DEV CYCLE SECTION
+   ============================================================ */
+.cycle-section {
+  padding: var(--section-padding);
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.cycle-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+}
+
+.cycle-section__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.cycle-section__header .section-subtitle {
+  margin: 0 auto;
+}
+
+/* ---- Timeline ---- */
+.cycle-timeline {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Step wrapper */
+.cycle-step-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---- Connector ---- */
+.cycle-connector {
+  position: relative;
+  height: 60px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.cycle-connector__svg {
+  width: 40px;
+  height: 60px;
+}
+
+.cycle-connector__line {
+  stroke-dashoffset: 80;
+  transition: stroke-dashoffset 1s ease 0.3s;
+}
+
+.cycle-connector__line--visible {
+  stroke-dashoffset: 0;
+}
+
+.cycle-connector__packet {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--packet-color);
+  box-shadow: 0 0 15px var(--packet-color);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cycle-connector__packet--visible {
+  opacity: 1;
+  animation: packet-travel 2s ease-in-out infinite;
+}
+
+@keyframes packet-travel {
+  0% { top: 0; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: 50px; opacity: 0; }
+}
+
+/* ---- Step Card ---- */
+.cycle-step {
+  position: relative;
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 4px solid transparent;
+  overflow: hidden;
+}
+
+.cycle-step--visible {
+  opacity: 1;
+  transform: translateY(0);
+  border-left-color: var(--step-color);
+}
+
+.cycle-step:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 30px color-mix(in srgb, var(--step-color) 12%, transparent);
+  border-color: var(--step-color);
+}
+
+/* Number */
+.cycle-step__number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--step-color) 15%, transparent);
+  border: 2px solid var(--step-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--step-color);
+}
+
+/* Content */
+.cycle-step__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.cycle-step__header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.cycle-step__icon {
+  font-size: 1.8rem;
+}
+
+.cycle-step__title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--step-color);
+  margin-bottom: 0.1rem;
+}
+
+.cycle-step__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--glass-bg);
+  padding: 0.15rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.cycle-step__subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.cycle-step__desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* ---- Step Visuals ---- */
+.cycle-step__visual {
+  padding: 1rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+}
+
+/* Frontend form */
+.cycle-vis-frontend {
+  display: flex;
+  justify-content: center;
+}
+
+.cycle-vis-form {
+  width: 100%;
+  max-width: 300px;
+}
+
+.cycle-vis-input {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.cycle-vis-input span {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  min-width: 50px;
+}
+
+.cycle-vis-field {
+  flex: 1;
+  height: 28px;
+  background: hsl(230, 25%, 10%);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+}
+
+.cycle-vis-submit {
+  width: 100%;
+  padding: 0.5rem;
+  background: var(--gradient-accent);
+  color: var(--bg-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.cycle-vis-submit:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+/* Request packet */
+.cycle-vis-request {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cycle-vis-packet {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(124, 77, 255, 0.15);
+  border: 1px solid rgba(124, 77, 255, 0.4);
+  border-radius: var(--radius-md);
+  animation: float 2s ease-in-out infinite;
+}
+
+.cycle-vis-packet-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-purple);
+  font-family: 'Courier New', monospace;
+}
+
+.cycle-vis-trail {
+  display: flex;
+  gap: 4px;
+}
+
+.cycle-vis-trail span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-purple);
+  opacity: 0.5;
+  animation: data-packet-pulse 1.5s ease-in-out infinite;
+}
+
+.cycle-vis-trail span:nth-child(1) { animation-delay: 0s; opacity: 0.3; }
+.cycle-vis-trail span:nth-child(2) { animation-delay: 0.2s; opacity: 0.5; }
+.cycle-vis-trail span:nth-child(3) { animation-delay: 0.4s; opacity: 0.7; }
+
+/* Backend checks */
+.cycle-vis-backend {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cycle-vis-check {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 152, 0, 0.1);
+  border: 1px solid rgba(255, 152, 0, 0.3);
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  color: var(--accent-orange);
+  font-weight: 600;
+  animation: bounce-in 0.6s ease-out backwards;
+}
+
+.cycle-vis-check:nth-child(1) { animation-delay: 0.1s; }
+.cycle-vis-check:nth-child(2) { animation-delay: 0.3s; }
+.cycle-vis-check:nth-child(3) { animation-delay: 0.5s; }
+
+/* Database */
+.cycle-vis-database {
+  text-align: center;
+}
+
+.cycle-vis-doc {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: var(--accent-green);
+  padding: 0.5rem 1rem;
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  border-radius: var(--radius-md);
+  margin-bottom: 0.6rem;
+  display: inline-block;
+}
+
+.cycle-vis-action {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Response */
+.cycle-vis-response {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cycle-vis-json {
+  padding: 0.5rem 1rem;
+  background: hsl(230, 25%, 10%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+}
+
+.cycle-vis-json code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: var(--accent-blue);
+}
+
+.cycle-vis-checkmark {
+  font-size: 1.5rem;
+  animation: bounce-in 0.5s ease-out;
+}
+
+/* Result with confetti */
+.cycle-vis-result {
+  display: flex;
+  justify-content: center;
+}
+
+.cycle-vis-screen {
+  position: relative;
+  padding: 1.5rem 2rem;
+  background: hsl(230, 25%, 10%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  overflow: hidden;
+}
+
+.cycle-vis-welcome {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  animation: bounce-in 0.6s ease-out;
+}
+
+.cycle-vis-confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cycle-vis-confetti-piece {
+  position: absolute;
+  left: var(--x);
+  top: -5px;
+  width: 4px;
+  height: 8px;
+  background: var(--color);
+  border-radius: 2px;
+  animation: confetti-fall 2s ease-in var(--delay) infinite;
+  opacity: 0.7;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .cycle-step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .cycle-step__header {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .cycle-vis-backend {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cycle-vis-response {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

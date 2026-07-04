@@ -1,0 +1,372 @@
+/* ============================================================
+   MERN STACK SECTION
+   ============================================================ */
+.mern-section {
+  padding: var(--section-padding);
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.mern-section__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mern-section__header .section-subtitle {
+  margin: 0 auto;
+}
+
+/* JS Everywhere Banner */
+.mern-js-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.08), rgba(255, 215, 0, 0.02));
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: var(--radius-full);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.mern-js-banner__icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: #f7df1e;
+  color: #000;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.mern-js-banner__text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.mern-js-banner__text strong {
+  color: #f7df1e;
+}
+
+.mern-js-banner__line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f7df1e, transparent);
+  animation: shimmer 3s linear infinite;
+  background-size: 200% auto;
+}
+
+/* ---- Cards Grid ---- */
+.mern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ---- Individual Card ---- */
+.mern-card {
+  position: relative;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+  will-change: transform;
+  cursor: default;
+}
+
+.mern-card:hover {
+  border-color: var(--card-color-var);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px color-mix(in srgb, var(--card-color-var) 15%, transparent);
+}
+
+.mern-card__glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-color-var);
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+  box-shadow: 0 0 30px var(--card-color-var);
+}
+
+.mern-card:hover .mern-card__glow {
+  opacity: 1;
+}
+
+.mern-card__letter {
+  position: absolute;
+  top: -15px;
+  right: 15px;
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 900;
+  color: var(--card-color-var);
+  opacity: 0.06;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.mern-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.mern-card__name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--card-color-var);
+  margin-bottom: 0.3rem;
+}
+
+.mern-card__tagline {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.mern-card__desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.mern-card__features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.mern-card__feature {
+  padding: 0.25rem 0.7rem;
+  background: color-mix(in srgb, var(--card-color-var) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--card-color-var) 25%, transparent);
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--card-color-var);
+}
+
+/* ---- Hover Animations Area ---- */
+.mern-card__anim {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  overflow: hidden;
+}
+
+.mern-card:hover .mern-card__anim {
+  opacity: 1;
+}
+
+/* MongoDB: Morphing boxes */
+.mongo-anim {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.mongo-box {
+  position: absolute;
+  background: rgba(0, 237, 100, 0.15);
+  border: 1px solid rgba(0, 237, 100, 0.3);
+  transition: all 0.6s ease;
+}
+
+.mongo-box--1 {
+  width: 30px;
+  height: 30px;
+  top: 20px;
+  right: 20px;
+  border-radius: 4px;
+}
+
+.mongo-box--2 {
+  width: 25px;
+  height: 25px;
+  top: 55px;
+  right: 30px;
+  border-radius: 4px;
+}
+
+.mongo-box--3 {
+  width: 35px;
+  height: 20px;
+  top: 40px;
+  right: 65px;
+  border-radius: 4px;
+}
+
+.mern-card:hover .mongo-box--1 {
+  border-radius: 12px;
+  width: 40px;
+  height: 20px;
+  transform: rotate(5deg);
+}
+
+.mern-card:hover .mongo-box--2 {
+  border-radius: 15px;
+  width: 45px;
+  height: 15px;
+  transform: rotate(-3deg);
+}
+
+.mern-card:hover .mongo-box--3 {
+  border-radius: 10px;
+  width: 30px;
+  height: 25px;
+  transform: rotate(8deg);
+}
+
+/* Express: Organizing dots into lanes */
+.express-anim {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.express-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  transition: all 0.6s ease;
+  opacity: 0.6;
+}
+
+.express-dot:nth-child(1) { top: 15px; right: 20px; }
+.express-dot:nth-child(2) { top: 35px; right: 50px; }
+.express-dot:nth-child(3) { top: 55px; right: 15px; }
+.express-dot:nth-child(4) { top: 25px; right: 70px; }
+.express-dot:nth-child(5) { top: 65px; right: 45px; }
+
+.express-lane {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--text-primary));
+  opacity: 0;
+  transition: opacity 0.4s ease 0.3s;
+}
+
+.mern-card:hover .express-dot:nth-child(1) { top: 35px; right: 15px; }
+.mern-card:hover .express-dot:nth-child(2) { top: 35px; right: 30px; }
+.mern-card:hover .express-dot:nth-child(3) { top: 35px; right: 45px; }
+.mern-card:hover .express-dot:nth-child(4) { top: 35px; right: 60px; }
+.mern-card:hover .express-dot:nth-child(5) { top: 35px; right: 75px; }
+.mern-card:hover .express-lane { opacity: 0.4; }
+
+/* React: Blocks snapping together */
+.react-anim {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.react-block {
+  position: absolute;
+  border: 2px solid rgba(97, 218, 251, 0.4);
+  background: rgba(97, 218, 251, 0.08);
+  border-radius: 6px;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.react-block--1 { width: 28px; height: 22px; top: 10px; right: 15px; }
+.react-block--2 { width: 28px; height: 22px; top: 40px; right: 50px; }
+.react-block--3 { width: 28px; height: 22px; top: 70px; right: 25px; }
+
+.react-orbit {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(97, 218, 251, 0.2);
+  border-radius: 50%;
+  top: 25px;
+  right: 25px;
+  animation: rotate-slow 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mern-card:hover .react-block--1 { top: 20px; right: 30px; }
+.mern-card:hover .react-block--2 { top: 44px; right: 30px; }
+.mern-card:hover .react-block--3 { top: 68px; right: 30px; }
+.mern-card:hover .react-orbit { opacity: 0.5; }
+
+/* Node: Power grid lines */
+.node-anim {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.node-line {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.node-line--1 { top: 25px; right: 0; width: 0; }
+.node-line--2 { top: 45px; right: 0; width: 0; }
+.node-line--3 { top: 65px; right: 0; width: 0; }
+
+.node-pulse {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  top: 40px;
+  right: 10px;
+  opacity: 0;
+  box-shadow: 0 0 20px var(--accent-green);
+  transition: opacity 0.3s ease;
+}
+
+.mern-card:hover .node-line--1 { width: 80px; opacity: 0.5; transition-delay: 0s; }
+.mern-card:hover .node-line--2 { width: 100px; opacity: 0.4; transition-delay: 0.1s; }
+.mern-card:hover .node-line--3 { width: 60px; opacity: 0.3; transition-delay: 0.2s; }
+.mern-card:hover .node-pulse { opacity: 1; animation: data-packet-pulse 1.5s ease-in-out infinite; }
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .mern-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .mern-js-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+}
